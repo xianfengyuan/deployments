@@ -5,7 +5,7 @@ locals {
     name = "sheermountain-dev"
     organization = "Sheer-Mountain-LLC"
 
-    tf_state_bucket = "terraform-state-sheermountain-com"
+    tf_state_bucket = "tf-state-sheermountain-com"
     global_region = "us-west-2"
     bucket_prefix = ""
     bucket_domain   = replace(local.domain, ".", "-")
