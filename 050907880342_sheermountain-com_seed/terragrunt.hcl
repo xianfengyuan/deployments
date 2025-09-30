@@ -1,7 +1,7 @@
 locals {
     deployment_vars = read_terragrunt_config(find_in_parent_folders("deployment.hcl"))
     account_id      = local.deployment_vars.locals.account_id
-    scope_vars = read_terragrunt_config(find_in_parent_folders("scope.hcl"))
+    sector_vars = read_terragrunt_config(find_in_parent_folders("sector.hcl"))
     version_vars = read_terragrunt_config(find_in_parent_folders("version.hcl"))
     region_vars = read_terragrunt_config(find_in_parent_folders("region.hcl"))
     aws_region = local.region_vars.locals.aws_region
@@ -41,7 +41,7 @@ EOF
 
 inputs = merge(
     local.deployment_vars.locals,
-    local.scope_vars.locals,
+    local.sector_vars.locals,
     local.version_vars.locals,
     local.region_vars.locals
 )

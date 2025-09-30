@@ -6,12 +6,12 @@ locals {
     organization = "cloud-foundation"
     global_region = "us-west-2"
     bucket_domain   = replace(local.domain, ".", "-")
-    bucket_prefix = "terraform"
+    bucket_prefix = "tf"
 
     bucket_name = "${local.bucket_prefix}-${local.mode}-${local.bucket_domain}"
 
     config = {
-        tfbucket = {
+        s3 = {
             no-version = {
                 us-west-2 = {
                     s3-bucket = {
